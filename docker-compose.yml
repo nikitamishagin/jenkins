@@ -9,13 +9,13 @@ services:
       - jenkins-data:/var/jenkins_home
       - /home/nikitamishagin/workspace:/var/jenkins_home/workspace
     deploy:
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 1
         delay: 5s
         failure_action: rollback
         monitor: 10s
-        order: stop-first
+        order: start-first
       restart_policy:
         condition: on-failure
 
