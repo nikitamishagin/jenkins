@@ -19,6 +19,9 @@ services:
       restart_policy:
         condition: on-failure
 
+volumes:
+  jenkins-data:
+
 networks:
   default:
     external: true
